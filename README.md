@@ -42,6 +42,15 @@ Tech lead tools for writing technical specifications and planning features.
 **Skills:**
 - `tech-spec-writer` - Create comprehensive technical specification documents through interactive Q&A
 
+### reddit-scanner
+
+Scan Reddit for niche pain points and app opportunities.
+
+**Skills:**
+- `scanning-reddit-niches` - Find product opportunities by scanning subreddits for pain signals and tool complaints
+
+**Requires:** [reddit-scanner CLI](https://github.com/allen-hsu/reddit-scanner) (`go install github.com/allen-hsu/reddit-scanner@latest`)
+
 ### git-commands
 
 Custom git workflow commands with conventional commits.

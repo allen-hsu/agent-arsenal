@@ -19,6 +19,13 @@
       "commands": ["./commands/commit.md"]
     },
     {
+      "name": "reddit-scanner",
+      "description": "Scan Reddit subreddits for pain points, tool complaints, and app opportunities. Find real product ideas from niche communities using the reddit-scanner CLI with Bubble Tea TUI.",
+      "source": "./plugins/reddit-scanner",
+      "strict": false,
+      "skills": ["./skills/scanning-reddit-niches"]
+    },
+    {
       "name": "react-native-mobile",
       "description": "Complete React Native + Expo mobile development: app architecture, UI patterns, state management, design systems, animations, and DevOps (EAS Build, Submit, Update, Workflows)",
       "source": "./plugins/react-native-mobile",

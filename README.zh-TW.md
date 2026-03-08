@@ -42,6 +42,15 @@ claude plugins install arsenal:react-native-mobile
 **Skills：**
 - `tech-spec-writer` - 透過互動式問答建立完整的技術規格文件
 
+### reddit-scanner
+
+掃描 Reddit 利基社群，找出痛點和 App 機會。
+
+**技能：**
+- `scanning-reddit-niches` - 從 subreddit 的痛點信號和工具抱怨中發掘產品機會
+
+**需要：** [reddit-scanner CLI](https://github.com/allen-hsu/reddit-scanner)（`go install github.com/allen-hsu/reddit-scanner@latest`）
+
 ### git-commands
 
 自訂 git 工作流程指令，支援 conventional commits。
