@@ -2,21 +2,44 @@
 # Install reddit-scanner CLI
 set -e
 
+REPO="allen-hsu/reddit-scanner"
+
 if command -v reddit-scanner &>/dev/null; then
   echo "✅ reddit-scanner already installed: $(which reddit-scanner)"
   exit 0
 fi
 
-if command -v go &>/dev/null; then
-  echo "📦 Installing via go install..."
-  go install github.com/allen-hsu/reddit-scanner@latest
-  echo "✅ Installed: $(which reddit-scanner)"
-else
-  echo "⚠️  Go not found. Installing from source..."
+# Detect OS and arch
+OS=$(uname -s | tr '[:upper:]' '[:lower:]')
+ARCH=$(uname -m)
+case "$ARCH" in
+  x86_64) ARCH="amd64" ;;
+  aarch64|arm64) ARCH="arm64" ;;
+esac
+
+# Try downloading pre-built binary from GitHub Releases
+LATEST=$(curl -sL "https://api.github.com/repos/$REPO/releases/latest" | grep '"tag_name"' | cut -d'"' -f4)
+
+if [ -n "$LATEST" ]; then
+  URL="https://github.com/$REPO/releases/download/${LATEST}/reddit-scanner_${OS}_${ARCH}.tar.gz"
+  echo "📦 Downloading $LATEST for ${OS}/${ARCH}..."
   TMPDIR=$(mktemp -d)
-  git clone --depth 1 https://github.com/allen-hsu/reddit-scanner.git "$TMPDIR/reddit-scanner"
-  cd "$TMPDIR/reddit-scanner"
-  go build -o /usr/local/bin/reddit-scanner .
+  if curl -sL "$URL" | tar xz -C "$TMPDIR" 2>/dev/null; then
+    sudo mv "$TMPDIR/reddit-scanner" /usr/local/bin/ 2>/dev/null || mv "$TMPDIR/reddit-scanner" "$HOME/.local/bin/"
+    rm -rf "$TMPDIR"
+    echo "✅ Installed reddit-scanner $LATEST"
+    exit 0
+  fi
   rm -rf "$TMPDIR"
-  echo "✅ Installed to /usr/local/bin/reddit-scanner"
+  echo "⚠️  Binary download failed, falling back to source build..."
+fi
+
+# Fallback: build from source
+if command -v go &>/dev/null; then
+  echo "📦 Building from source..."
+  go install "github.com/$REPO@latest"
+  echo "✅ Installed via go install"
+else
+  echo "❌ Need either a GitHub release or Go installed. Install Go: https://go.dev/dl/"
+  exit 1
 fi
