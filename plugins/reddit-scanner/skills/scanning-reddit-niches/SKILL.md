@@ -9,18 +9,13 @@ Find real product opportunities by scanning Reddit for pain signals and tool com
 
 ## Prerequisites
 
-Install the CLI:
+Check if installed, otherwise run the bundled install script:
 
 ```bash
-go install github.com/allen-hsu/reddit-scanner@latest
+command -v reddit-scanner || bash scripts/install.sh
 ```
 
-Or build from source:
-
-```bash
-git clone https://github.com/allen-hsu/reddit-scanner.git
-cd reddit-scanner && go build -o reddit-scanner .
-```
+Source: [github.com/allen-hsu/reddit-scanner](https://github.com/allen-hsu/reddit-scanner)
 
 ## Core Workflow
 
