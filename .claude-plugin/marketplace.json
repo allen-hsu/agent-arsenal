@@ -58,6 +58,13 @@
       "commands": ["./commands/commit.md"]
     },
     {
+      "name": "content-design",
+      "description": "Visual content creation: editorial-quality HTML info cards with magazine aesthetics, Swiss typography, and adaptive layouts",
+      "source": "./plugins/content-design",
+      "strict": false,
+      "skills": ["./skills/creating-info-cards"]
+    },
+    {
       "name": "product-planning",
       "description": "Product planning and strategy: idea brainstorming with forcing questions, CEO-mode strategic plan review with 10-section mega review, and designer's eye plan review with 7-pass scoring audit",
       "source": "./plugins/product-planning",
