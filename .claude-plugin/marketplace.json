@@ -59,10 +59,14 @@
     },
     {
       "name": "content-design",
-      "description": "Visual content creation: editorial-quality HTML info cards with magazine aesthetics, Swiss typography, and adaptive layouts",
+      "description": "Content creation and refinement: editorial-quality HTML info cards, plus AI writing pattern removal for natural-sounding English and Traditional Chinese text",
       "source": "./plugins/content-design",
       "strict": false,
-      "skills": ["./skills/creating-info-cards"]
+      "skills": [
+        "./skills/creating-info-cards",
+        "./skills/humanizing-text",
+        "./skills/humanizing-text-zh-tw"
+      ]
     },
     {
       "name": "product-planning",
