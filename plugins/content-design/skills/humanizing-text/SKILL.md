@@ -393,7 +393,8 @@ Provide:
 1. Draft rewrite
 2. "What makes the below so obviously AI generated?" (brief bullets)
 3. Final rewrite
-4. A brief summary of changes made (optional, if helpful)
+4. Quality score (5 dimensions, /50 — see Quality Score section)
+5. A brief summary of changes made (optional, if helpful)
 
 
 ## Full Example
@@ -453,6 +454,24 @@ Provide:
 - Removed generic positive conclusion ("the future looks bright", "exciting times lie ahead")
 - Made the voice more personal and less "assembled" (varied rhythm, fewer placeholders)
 
+
+## Quality Score
+
+After the final rewrite, score the output on these 5 dimensions (total /50). Each dimension is calibrated for native English writing norms.
+
+| Dimension | What to evaluate | Score |
+|-----------|-----------------|-------|
+| **Directness** | Does it get to the point or stall with preamble? English readers have low tolerance for throat-clearing. 10 = no filler; 1 = buried lede | /10 |
+| **Rhythm** | Do sentence lengths vary? Do openers vary? Consecutive sentences starting with "The...", "This...", "It..." is a dead giveaway. 10 = natural mix of short and long, varied openers; 1 = monotone | /10 |
+| **Trust** | Does it respect the reader's intelligence? Does it skip over-explaining obvious things? 10 = lean and confident; 1 = hand-holding | /10 |
+| **Authenticity** | Does it sound like a person wrote it? Does it use contractions naturally (it's, don't, can't)? Uncontracted forms (it is, do not, cannot) in casual or semi-formal writing are an AI signal. Does it have opinions, hedges, or first-person where appropriate? 10 = sounds human; 1 = sounds assembled | /10 |
+| **Economy** | Could anything still be cut without losing meaning? Are there redundant qualifiers, filler transitions, or padded sentences? 10 = nothing to cut; 1 = bloated | /10 |
+| **Total** | | **/50** |
+
+**Thresholds:**
+- 45-50: Excellent — AI patterns fully removed, reads as natural human writing
+- 35-44: Good — major AI patterns removed, minor tells remain
+- Below 35: Needs another pass
 
 ## Reference
 
