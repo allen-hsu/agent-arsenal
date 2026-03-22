@@ -1,4 +1,4 @@
-# Arsenal
+# Agent Arsenal
 
 [繁體中文](README.zh-TW.md)
 
@@ -9,7 +9,7 @@ A Claude Code plugin marketplace containing custom skills and commands for AI-as
 Add this marketplace to your Claude Code settings:
 
 ```bash
-claude mcp add-marketplace arsenal https://github.com/allen-hsu/arsenal
+claude mcp add-marketplace agent-arsenal https://github.com/allen-hsu/agent-arsenal
 ```
 
 Or manually add to `.claude/settings.json`:
@@ -18,8 +18,8 @@ Or manually add to `.claude/settings.json`:
 {
   "extraKnownMarketplaces": [
     {
-      "name": "arsenal",
-      "source": "git:allen-hsu/arsenal"
+      "name": "agent-arsenal",
+      "source": "git:allen-hsu/agent-arsenal"
     }
   ]
 }
@@ -28,19 +28,24 @@ Or manually add to `.claude/settings.json`:
 Then install individual plugins:
 
 ```bash
-claude plugins install arsenal:tech-lead
-claude plugins install arsenal:git-commands
-claude plugins install arsenal:react-native-mobile
+claude plugins install agent-arsenal:product-planning
+claude plugins install agent-arsenal:engineering-core
+claude plugins install agent-arsenal:shipping
+claude plugins install agent-arsenal:reddit-scanner
+claude plugins install agent-arsenal:react-native-mobile
+claude plugins install agent-arsenal:research
 ```
 
 ## Available Plugins
 
-### tech-lead
+### product-planning
 
-Tech lead tools for writing technical specifications and planning features.
+Product strategy and design thinking — brainstorm before you build.
 
 **Skills:**
-- `tech-spec-writer` - Create comprehensive technical specification documents through interactive Q&A
+- `brainstorming-ideas` - YC-style office hours with forcing questions, premise challenges, and design doc output
+- `reviewing-product-strategy` - CEO/founder perspective plan review with 4 scope modes and 10-section mega review
+- `reviewing-product-design` - Designer's eye plan review with 7-pass audit and 0-10 scoring
 
 ### reddit-scanner
 
@@ -51,26 +56,50 @@ Scan Reddit for niche pain points and app opportunities.
 
 **Requires:** [reddit-scanner CLI](https://github.com/allen-hsu/reddit-scanner) (`go install github.com/allen-hsu/reddit-scanner@latest`)
 
-### git-commands
+### engineering-core
 
-Custom git workflow commands with conventional commits.
+Core engineering practices — specs, review, and debugging.
+
+**Skills:**
+- `writing-tech-specs` - Create technical specification documents through interactive Q&A
+- `reviewing-architecture` - Architecture review with data flow diagrams, failure modes, and test plans
+- `reviewing-code` - Pre-landing PR review with two-pass methodology and fix-first approach
+- `investigating-bugs` - Systematic root-cause debugging with Iron Law and 3-strike rule
+
+### shipping
+
+Testing, shipping, and retrospectives — from QA to production.
+
+**Skills:**
+- `testing-qa` - QA testing with Playwright, health scoring, atomic fix commits, and regression tests
+- `shipping-code` - Automated ship workflow: merge base, run tests, bisectable commits, create PR
+- `running-retro` - Weekly engineering retrospective with per-person analysis and trend tracking
 
 **Commands:**
-- `/commit` - Create a git commit with custom conventions
+- `/commit` - Create a git commit with conventional commits format
 
 ### react-native-mobile
 
 Complete React Native + Expo mobile development toolkit.
 
 **Skills:**
-- `react-native-mobile-dev` - App architecture, state management, navigation, and best practices
-- `react-native-mobile-design` - UI patterns, design systems, animations, and theming
-- `react-native-mobile-devops` - EAS Build, Submit, Update, and CI/CD workflows
+- `creating-expo-apps` - Scaffold new Expo apps with best practices
+- `developing-react-native` - App architecture, state management, navigation, and coding standards
+- `designing-mobile-ui` - UI patterns, design systems, animations, and theming
+- `deploying-mobile-apps` - EAS Build, Submit, Update, and CI/CD workflows
+- `integrating-google-ads` - Google AdMob integration with consent management
 
 **Commands:**
 - `/eas-build` - Build your app with EAS
 - `/eas-deploy` - Deploy your app to stores
 - `/eas-workflow` - Manage EAS Workflows
+
+### research
+
+Research and content aggregation.
+
+**Skills:**
+- `daily-tech-digest` - Aggregate trending content from ProductHunt, HackerNews, and Reddit
 
 ## Creating New Plugins
 

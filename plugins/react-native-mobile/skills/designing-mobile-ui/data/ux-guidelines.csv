@@ -1,0 +1,26 @@
+topic,rule,do,dont,priority,keywords
+touch-targets,Minimum 44pt touch targets,Use min-h-[44px] min-w-[44px] for all tappable elements,Make buttons smaller than 44pt,critical,touch tap button target size
+touch-targets,Extend touch area,Use hitSlop={12} for small icons,Leave small icons without extended touch area,high,touch hitslop icon small
+safe-areas,Respect device notches,Use useSafeAreaInsets() for top/bottom padding,Ignore safe areas let content hide behind notch,critical,safe area notch inset
+safe-areas,Bottom sheet safety,Add extra padding for home indicator on iPhone,Let bottom sheets overlap home indicator,high,bottom sheet home indicator iphone
+haptics,Feedback on actions,Use Haptics.impactAsync() for button presses,No haptic feedback on important actions,medium,haptics feedback vibration
+haptics,Different feedback types,Light for toggles Medium for buttons Heavy for errors,Same haptic for all interactions,medium,haptics impact notification
+keyboard,Keyboard avoiding view,Use KeyboardAvoidingView with proper behavior,Let keyboard cover input fields,critical,keyboard input avoiding view
+keyboard,Dismiss keyboard,Implement keyboard dismiss on scroll/tap outside,Keep keyboard open when tapping outside inputs,high,keyboard dismiss tap scroll
+loading,Skeleton screens,Show skeleton placeholders during loading,Show blank screen or spinner only,high,loading skeleton placeholder shimmer
+loading,Optimistic updates,Update UI immediately then sync with server,Wait for server response to update UI,medium,optimistic update instant feedback
+gestures,Swipe to go back,Support iOS back gesture on stack navigators,Disable swipe back gesture,high,swipe back gesture navigation
+gestures,Pull to refresh,Implement pull to refresh on scrollable lists,Force users to tap refresh button,medium,pull refresh scroll list
+animations,Spring physics,Use spring animations for natural feel,Use linear timing for UI animations,high,spring animation physics natural
+animations,Reduced motion,Respect prefers-reduced-motion setting,Ignore accessibility motion preferences,critical,reduced motion accessibility a11y
+animations,Duration limits,Keep animations 200-400ms for UI interactions,Use animations longer than 500ms for feedback,high,animation duration timing speed
+lists,Virtualized lists,Use FlashList or FlatList for long lists,Use ScrollView with map for long lists,critical,list virtualized flatlist flashlist
+lists,Pull to refresh,Add RefreshControl to scrollable lists,Omit refresh functionality on data lists,medium,refresh control pull list
+navigation,Tab bar visibility,Keep bottom tabs visible on main screens,Hide tabs on every navigation,medium,tabs navigation bottom bar
+navigation,Back button,Always provide clear way to go back,Trap users on screens without back option,critical,back navigation button return
+text,Dynamic type support,Support iOS Dynamic Type for accessibility,Use fixed font sizes only,high,dynamic type accessibility font size
+text,Line height,Use leading-relaxed for body text readability,Use tight line height for paragraphs,medium,line height leading spacing
+images,Placeholder blur,Use blurhash or placeholder while loading,Show broken image icon during load,medium,image placeholder blur loading
+images,Aspect ratio,Maintain consistent aspect ratios in lists,Let images have random aspect ratios,medium,image aspect ratio consistent
+forms,Input validation,Show inline validation errors immediately,Wait for submit to show all errors,high,form validation input error
+forms,Auto-focus,Auto-focus first input on form screens,Require user to tap to start typing,medium,form focus input autofocus

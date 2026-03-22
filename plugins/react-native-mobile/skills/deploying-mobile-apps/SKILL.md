@@ -1,5 +1,5 @@
 ---
-name: react-native-mobile-devops
+name: deploying-mobile-apps
 description: Mobile DevOps for React Native and Expo apps using EAS (Expo Application Services) and Fastlane. Use when (1) user needs to set up CI/CD for mobile apps, (2) user asks about EAS Build, Submit, Update, or Workflows, (3) user wants to automate app deployment to App Store or Play Store, (4) user mentions "EAS", "Fastlane", "mobile CI/CD", "app deployment", or "OTA updates".
 ---
 
@@ -144,90 +144,7 @@ jobs:
 
 ### Production Deployment Workflow
 
-```yaml
-name: Deploy to Production
-
-on:
-  push:
-    branches: [main]
-
-jobs:
-  # Check if native code changed
-  fingerprint:
-    name: Fingerprint
-    type: fingerprint
-    environment: production
-
-  # Look for existing compatible build
-  get_android_build:
-    name: Check Android Build
-    needs: [fingerprint]
-    type: get-build
-    params:
-      fingerprint_hash: ${{ needs.fingerprint.outputs.android_fingerprint_hash }}
-      profile: production
-
-  get_ios_build:
-    name: Check iOS Build
-    needs: [fingerprint]
-    type: get-build
-    params:
-      fingerprint_hash: ${{ needs.fingerprint.outputs.ios_fingerprint_hash }}
-      profile: production
-
-  # Build only if no compatible build exists
-  build_android:
-    name: Build Android
-    needs: [get_android_build]
-    if: ${{ !needs.get_android_build.outputs.build_id }}
-    type: build
-    params:
-      platform: android
-      profile: production
-
-  build_ios:
-    name: Build iOS
-    needs: [get_ios_build]
-    if: ${{ !needs.get_ios_build.outputs.build_id }}
-    type: build
-    params:
-      platform: ios
-      profile: production
-
-  # Submit new builds to stores
-  submit_android:
-    name: Submit to Play Store
-    needs: [build_android]
-    type: submit
-    params:
-      build_id: ${{ needs.build_android.outputs.build_id }}
-
-  submit_ios:
-    name: Submit to App Store
-    needs: [build_ios]
-    type: submit
-    params:
-      build_id: ${{ needs.build_ios.outputs.build_id }}
-
-  # Publish OTA update if build exists
-  update_android:
-    name: OTA Update Android
-    needs: [get_android_build]
-    if: ${{ needs.get_android_build.outputs.build_id }}
-    type: update
-    params:
-      branch: production
-      platform: android
-
-  update_ios:
-    name: OTA Update iOS
-    needs: [get_ios_build]
-    if: ${{ needs.get_ios_build.outputs.build_id }}
-    type: update
-    params:
-      branch: production
-      platform: ios
-```
+Uses fingerprinting to detect native changes: builds + submits when native code changes, OTA updates when only JS changes. See full workflow: [references/production-deploy-workflow.yml](references/production-deploy-workflow.yml)
 
 ## EAS Commands Reference
 
@@ -424,5 +341,6 @@ jobs:
 
 - **EAS JSON Config**: [references/eas-json.md](references/eas-json.md)
 - **EAS Workflows Syntax**: [references/eas-workflows.md](references/eas-workflows.md)
+- **Production Deploy Workflow**: [references/production-deploy-workflow.yml](references/production-deploy-workflow.yml)
 - **Fastlane Patterns**: [references/fastlane.md](references/fastlane.md)
 - **Deployment Patterns**: [references/deployment-patterns.md](references/deployment-patterns.md)

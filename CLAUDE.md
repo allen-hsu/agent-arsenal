@@ -4,30 +4,47 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Arsenal is a Claude Code plugin marketplace containing custom skills and commands. It is registered as a plugin marketplace via `.claude-plugin/marketplace.json` and can be installed in Claude Code to extend its capabilities.
+Agent Arsenal is a Claude Code plugin marketplace containing custom skills and commands. It is registered as a plugin marketplace via `.claude-plugin/marketplace.json` and can be installed in Claude Code to extend its capabilities.
 
 ## Repository Structure
 
 ```
-arsenal/
+agent-arsenal/
 ├── .claude-plugin/
 │   └── marketplace.json        # Plugin marketplace configuration
 ├── plugins/                    # Each plugin has its own isolated directory
-│   ├── tech-lead/
+│   ├── product-planning/       # Product strategy & design thinking
 │   │   └── skills/
-│   │       └── tech-spec-writer/
-│   ├── git-commands/
+│   │       ├── brainstorming-ideas/
+│   │       ├── reviewing-product-strategy/
+│   │       └── reviewing-product-design/
+│   ├── engineering-core/       # Core engineering practices
+│   │   └── skills/
+│   │       ├── writing-tech-specs/
+│   │       ├── reviewing-architecture/
+│   │       ├── reviewing-code/
+│   │       └── investigating-bugs/
+│   ├── shipping/               # Testing, shipping & retrospectives
+│   │   ├── skills/
+│   │   │   ├── testing-qa/
+│   │   │   ├── shipping-code/
+│   │   │   └── running-retro/
 │   │   └── commands/
 │   │       └── commit.md
-│   └── react-native-mobile/
-│       ├── skills/
-│       │   ├── react-native-mobile-dev/
-│       │   ├── react-native-mobile-design/
-│       │   └── react-native-mobile-devops/
-│       └── commands/
-│           ├── eas-build.md
-│           ├── eas-deploy.md
-│           └── eas-workflow.md
+│   ├── react-native-mobile/    # React Native + Expo development
+│   │   ├── skills/
+│   │   │   ├── creating-expo-apps/
+│   │   │   ├── developing-react-native/
+│   │   │   ├── designing-mobile-ui/
+│   │   │   ├── deploying-mobile-apps/
+│   │   │   └── integrating-google-ads/
+│   │   └── commands/
+│   │       ├── eas-build.md
+│   │       ├── eas-deploy.md
+│   │       └── eas-workflow.md
+│   └── research/               # Research & content aggregation
+│       └── skills/
+│           └── daily-tech-digest/
 └── CLAUDE.md
 ```
 

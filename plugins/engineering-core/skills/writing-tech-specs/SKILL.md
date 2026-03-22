@@ -1,5 +1,5 @@
 ---
-name: tech-spec-writer
+name: writing-tech-specs
 description: Create comprehensive technical specification documents through interactive Q&A. Use when (1) user asks to write a Tech Spec, (2) user wants to plan a new feature, (3) user needs to create technical documentation for a feature, (4) user mentions "tech spec", "technical specification", or "feature planning document".
 ---
 

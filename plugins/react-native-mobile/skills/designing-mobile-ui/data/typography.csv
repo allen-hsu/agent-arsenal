@@ -1,0 +1,13 @@
+name,display_font,body_font,category,google_fonts,expo_install,best_for,keywords
+modern-geometric,Satoshi,Inter,modern,@fontsource/satoshi @fontsource/inter,expo-google-fonts/inter,SaaS fintech productivity,modern clean geometric professional saas
+elegant-serif,Playfair Display,Source Sans Pro,elegant,@fontsource/playfair-display @fontsource/source-sans-pro,expo-google-fonts/playfair-display,Luxury editorial premium,elegant luxury editorial premium sophisticated
+playful-rounded,Nunito,Nunito,playful,@fontsource/nunito,expo-google-fonts/nunito,Kids apps casual social,playful rounded friendly fun kids
+tech-monospace,JetBrains Mono,Inter,tech,@fontsource/jetbrains-mono @fontsource/inter,expo-google-fonts/jetbrains-mono,Developer tools code apps,tech code developer monospace programming
+minimal-system,SF Pro Display,-apple-system,minimal,System fonts,None needed,iOS native apps minimal,minimal ios native system clean
+bold-impact,Clash Display,DM Sans,bold,Custom font,Custom installation,Creative apps bold brands,bold impact strong creative statement
+classic-readable,Merriweather,Open Sans,classic,@fontsource/merriweather @fontsource/open-sans,expo-google-fonts/merriweather,Reading apps news editorial,classic readable serif editorial news
+sporty-condensed,Oswald,Roboto,sporty,@fontsource/oswald @fontsource/roboto,expo-google-fonts/oswald,Sports fitness apps,sporty condensed athletic fitness strong
+humanist-warm,Lato,Lato,humanist,@fontsource/lato,expo-google-fonts/lato,Wellness healthcare apps,warm friendly humanist approachable wellness
+swiss-clean,Helvetica Neue,Helvetica Neue,swiss,System fonts,None needed,Professional business apps,swiss clean helvetica professional business
+creative-display,Space Grotesk,Work Sans,creative,@fontsource/space-grotesk @fontsource/work-sans,expo-google-fonts/space-grotesk,Creative portfolio apps,creative modern space grotesk portfolio
+asian-friendly,Noto Sans,Noto Sans,multilingual,@fontsource/noto-sans,expo-google-fonts/noto-sans,Multilingual apps CJK support,multilingual chinese japanese korean asian

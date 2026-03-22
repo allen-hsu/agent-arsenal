@@ -1,0 +1,13 @@
+name,description,characteristics,radius,shadows,animations,best_for,keywords
+ios-native,Apple Human Interface Guidelines,Clean lines minimal chrome large touch targets,rounded-2xl rounded-3xl,Subtle elevation,Spring physics 0.3s ease,iOS-first apps Apple ecosystem,ios apple native hig clean
+material-you,Google Material Design 3,Dynamic color shapes expressiveness,rounded-xl rounded-2xl,Tonal elevation,Emphasized motion 0.2s,Android-first apps Google ecosystem,android material google md3 dynamic
+glassmorphism,Frosted glass translucent layers,blur(20px) bg-white/30 subtle borders,rounded-2xl rounded-3xl,Glow effects,Smooth parallax,Premium apps modern interfaces,glass blur transparent frosted modern
+neumorphism,Soft extruded UI elements,Dual shadows (light+dark) soft surfaces,rounded-xl rounded-2xl,Inset outset shadows,Subtle press states,Minimal apps unique interfaces,soft shadow 3d minimal clean
+brutalist,Raw bold unconventional,High contrast bold typography harsh edges,rounded-none sharp,None or harsh,Minimal or glitchy,Art apps creative tools,brutal raw bold unconventional artistic
+minimal-ios,Ultra clean Apple inspired,Maximum whitespace subtle dividers,rounded-xl,Almost none,Smooth 0.2s,Notes productivity reading,minimal clean simple whitespace ios
+bold-expressive,Vibrant dynamic playful,Large typography bold colors playful shapes,rounded-3xl pill,Colorful shadows,Bouncy spring,Social gaming entertainment,bold fun playful colorful expressive
+luxury-refined,Premium elegant sophisticated,Subtle colors gold accents serif fonts,rounded-lg rounded-xl,Subtle elegant,Slow refined 0.4s,Banking premium brands,luxury premium elegant sophisticated gold
+dark-immersive,Deep blacks rich colors,Pure black backgrounds vivid accents,rounded-xl rounded-2xl,Glow effects,Smooth fade,Media apps entertainment,dark immersive rich media entertainment
+organic-soft,Natural flowing rounded,Soft edges muted colors organic shapes,rounded-full blob,Soft diffused,Gentle bounce,Wellness nature meditation,organic soft natural wellness calm
+retro-pixel,8-bit inspired nostalgic,Pixel fonts bold outlines limited palette,rounded-none,Hard pixel shadows,Step animations,Games retro indie,retro pixel 8bit nostalgic gaming indie
+gradient-modern,Colorful gradients modern,Multi-color gradients mesh backgrounds,rounded-2xl rounded-3xl,Gradient shadows,Smooth color transitions,Creative social lifestyle,gradient colorful modern creative

@@ -1,22 +1,21 @@
 {
-  "name": "arsenal",
+  "name": "agent-arsenal",
   "owner": {
     "name": "AllenHsu"
   },
   "description": "A collection of AI skills, commands, and plugins for Claude Code",
   "plugins": [
     {
-      "name": "tech-lead",
-      "description": "Tech leads: tech spec writing, feature planning, and technical documentation",
-      "source": "./plugins/tech-lead",
+      "name": "engineering-core",
+      "description": "Core engineering workflows: tech spec writing, architecture review, pre-landing code review, and systematic debugging with root cause investigation",
+      "source": "./plugins/engineering-core",
       "strict": false,
-      "skills": ["./skills/tech-spec-writer"]
-    },
-    {
-      "name": "git-commands",
-      "description": "Custom git workflow commands with conventional commits",
-      "source": "./plugins/git-commands",
-      "commands": ["./commands/commit.md"]
+      "skills": [
+        "./skills/writing-tech-specs",
+        "./skills/reviewing-architecture",
+        "./skills/reviewing-code",
+        "./skills/investigating-bugs"
+      ]
     },
     {
       "name": "reddit-scanner",
@@ -31,14 +30,46 @@
       "source": "./plugins/react-native-mobile",
       "strict": false,
       "skills": [
-        "./skills/react-native-mobile-dev",
-        "./skills/react-native-mobile-devops",
-        "./skills/react-native-mobile-design"
+        "./skills/creating-expo-apps",
+        "./skills/developing-react-native",
+        "./skills/designing-mobile-ui",
+        "./skills/deploying-mobile-apps",
+        "./skills/integrating-google-ads"
       ],
       "commands": [
         "./commands/eas-build.md",
         "./commands/eas-deploy.md",
         "./commands/eas-workflow.md"
+      ]
+    },
+    {
+      "name": "research",
+      "description": "Research and content aggregation: daily tech news digest from ProductHunt, HackerNews, and Reddit for podcasts and newsletters",
+      "source": "./plugins/research",
+      "strict": false,
+      "skills": ["./skills/daily-tech-digest"]
+    },
+    {
+      "name": "shipping",
+      "description": "End-to-end shipping workflow: QA testing with Playwright, automated ship-to-PR pipeline, engineering retrospectives, and conventional commit commands",
+      "source": "./plugins/shipping",
+      "strict": false,
+      "skills": [
+        "./skills/testing-qa",
+        "./skills/shipping-code",
+        "./skills/running-retro"
+      ],
+      "commands": ["./commands/commit.md"]
+    },
+    {
+      "name": "product-planning",
+      "description": "Product planning and strategy: idea brainstorming with forcing questions, CEO-mode strategic plan review with 10-section mega review, and designer's eye plan review with 7-pass scoring audit",
+      "source": "./plugins/product-planning",
+      "strict": false,
+      "skills": [
+        "./skills/brainstorming-ideas",
+        "./skills/reviewing-product-strategy",
+        "./skills/reviewing-product-design"
       ]
     }
   ]

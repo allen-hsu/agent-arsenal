@@ -1,4 +1,4 @@
-# Arsenal
+# Agent Arsenal
 
 [English](README.md)
 
@@ -9,7 +9,7 @@
 將此市集加入 Claude Code 設定：
 
 ```bash
-claude mcp add-marketplace arsenal https://github.com/allen-hsu/arsenal
+claude mcp add-marketplace agent-arsenal https://github.com/allen-hsu/agent-arsenal
 ```
 
 或手動加入 `.claude/settings.json`：
@@ -18,8 +18,8 @@ claude mcp add-marketplace arsenal https://github.com/allen-hsu/arsenal
 {
   "extraKnownMarketplaces": [
     {
-      "name": "arsenal",
-      "source": "git:allen-hsu/arsenal"
+      "name": "agent-arsenal",
+      "source": "git:allen-hsu/agent-arsenal"
     }
   ]
 }
@@ -28,19 +28,24 @@ claude mcp add-marketplace arsenal https://github.com/allen-hsu/arsenal
 接著安裝個別插件：
 
 ```bash
-claude plugins install arsenal:tech-lead
-claude plugins install arsenal:git-commands
-claude plugins install arsenal:react-native-mobile
+claude plugins install agent-arsenal:product-planning
+claude plugins install agent-arsenal:engineering-core
+claude plugins install agent-arsenal:shipping
+claude plugins install agent-arsenal:reddit-scanner
+claude plugins install agent-arsenal:react-native-mobile
+claude plugins install agent-arsenal:research
 ```
 
 ## 可用插件
 
-### tech-lead
+### product-planning
 
-技術主管工具，用於撰寫技術規格書和規劃功能。
+產品策略與設計思考 — 動手寫程式之前先想清楚。
 
 **Skills：**
-- `tech-spec-writer` - 透過互動式問答建立完整的技術規格文件
+- `brainstorming-ideas` - YC 風格的 Office Hours，包含強制提問、前提挑戰和設計文件產出
+- `reviewing-product-strategy` - CEO/創辦人視角的計畫審查，4 種範圍模式和 10 項審查
+- `reviewing-product-design` - 設計師視角的計畫審查，7 項審計和 0-10 評分
 
 ### reddit-scanner
 
@@ -51,26 +56,50 @@ claude plugins install arsenal:react-native-mobile
 
 **需要：** [reddit-scanner CLI](https://github.com/allen-hsu/reddit-scanner)（`go install github.com/allen-hsu/reddit-scanner@latest`）
 
-### git-commands
+### engineering-core
 
-自訂 git 工作流程指令，支援 conventional commits。
+核心工程實踐 — 規格、審查、除錯。
+
+**Skills：**
+- `writing-tech-specs` - 透過互動式問答建立技術規格文件
+- `reviewing-architecture` - 架構審查，含資料流程圖、故障模式和測試計畫
+- `reviewing-code` - PR 預合併審查，兩階段方法論和修復優先策略
+- `investigating-bugs` - 系統性根因除錯，Iron Law 和三振出局規則
+
+### shipping
+
+測試、發版與回顧 — 從 QA 到上線。
+
+**Skills：**
+- `testing-qa` - 使用 Playwright 進行 QA 測試，健康評分、原子化修復提交和迴歸測試
+- `shipping-code` - 自動化發版流程：合併基礎分支、執行測試、可二分提交、建立 PR
+- `running-retro` - 週工程回顧，含個人分析和趨勢追蹤
 
 **Commands：**
-- `/commit` - 使用自訂規範建立 git commit
+- `/commit` - 使用 conventional commits 格式建立 git commit
 
 ### react-native-mobile
 
 完整的 React Native + Expo 行動應用開發工具組。
 
 **Skills：**
-- `react-native-mobile-dev` - 應用程式架構、狀態管理、導航和最佳實踐
-- `react-native-mobile-design` - UI 模式、設計系統、動畫和主題設定
-- `react-native-mobile-devops` - EAS Build、Submit、Update 和 CI/CD 工作流程
+- `creating-expo-apps` - 使用最佳實踐建立新的 Expo 應用
+- `developing-react-native` - 應用程式架構、狀態管理、導航和編碼規範
+- `designing-mobile-ui` - UI 模式、設計系統、動畫和主題設定
+- `deploying-mobile-apps` - EAS Build、Submit、Update 和 CI/CD 工作流程
+- `integrating-google-ads` - Google AdMob 整合與同意管理
 
 **Commands：**
 - `/eas-build` - 使用 EAS 建置應用程式
 - `/eas-deploy` - 部署應用程式到商店
 - `/eas-workflow` - 管理 EAS Workflows
+
+### research
+
+研究與內容彙整。
+
+**Skills：**
+- `daily-tech-digest` - 彙整 ProductHunt、HackerNews 和 Reddit 的熱門內容
 
 ## 建立新插件
 
