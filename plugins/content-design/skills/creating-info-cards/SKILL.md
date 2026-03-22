@@ -267,18 +267,18 @@ Let the card height grow naturally to fit content — do not set a fixed height.
 
 #### Color Approach
 
-Choose an accent color. If the content has a brand color, use it. Otherwise pick from these defaults:
+Choose an accent color. If the content has a brand color, use it. Otherwise pick from these defaults. These are calibrated to pop on the warm paper background (#f5f3ed) while maintaining editorial restraint:
 
 | Content domain | Accent | Hex |
 |---------------|--------|-----|
-| News / tech | Deep blue | #1a3a5c |
-| Finance | Forest green or gold | #1a4a3a / #8a6d3b |
-| Health | Teal | #1a6a5a |
-| Culture / arts | Warm red | #8a3a2a |
+| News / tech | Royal blue | #2d5faa |
+| Finance | Emerald or gold | #1a7a4a / #c49a2a |
+| Health | Vivid teal | #0f8a7a |
+| Culture / arts | Vermillion | #c44536 |
 | Startup / energy | Burnt orange | #e85d26 |
 | Neutral | Charcoal | #333333 |
 
-Keep it to 2-3 colors max: background (#f5f3ed), text (#0a0a0a), and one accent.
+Keep it to 2-3 colors max: background (#f5f3ed), text (#0a0a0a), and one accent. The accent should feel vibrant on the warm paper — avoid overly dark or desaturated colors that look muddy.
 
 ### Step 4: Self-Check
 
