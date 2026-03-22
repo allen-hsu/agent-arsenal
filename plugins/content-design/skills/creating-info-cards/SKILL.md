@@ -15,32 +15,161 @@ The goal is the intersection of Swiss International Style's rigorous structure a
 
 ### Step 1: Analyze Content Density
 
-Before writing any code, assess the input in one sentence:
+Before writing any code, assess the input in one sentence and pick the best layout:
 
-- **Low density**: A quote, single stat, or headline → use "Big Typography" layout
-- **Medium density**: 3-5 key points, a short summary → use standard single-column
-- **High density**: Multiple sections, data tables, long text → use multi-column grid
+| Content shape | Recommended layout |
+|--------------|-------------------|
+| Single quote, stat, or headline | **Big Typography** |
+| 3-5 key points, short summary | **Single Column** |
+| 7+ items, dense editorial text | **Multi-Column Grid** |
+| Technical specs, code, directory structures | **Modular Panels** |
+| Sequential process, roadmap, changelog | **Timeline / Steps** |
+| A vs B, before/after, pricing tiers | **Comparison** |
+| Product launch, event, person profile | **Hero + Details** |
 
-This assessment drives layout decisions in Step 2.
+Content may combine layouts — e.g., a Hero header with Modular Panels below, or a Timeline inside a Single Column card.
 
 ### Step 2: Choose Layout Strategy
 
-**Low density — "Big Typography"**
+Pick the layout that best matches the content structure, not just density.
+
+**1. Big Typography** — for quotes, single stats, headlines
 - Title fills the card at 80-120px
 - Core data enlarged to 120px+ as a visual anchor
-- Generous whitespace — the emptiness is the design
-- The number or quote IS the layout
+- Generous whitespace — the emptiness IS the design
+- Best when you have one powerful number or sentence
 
-**Medium density — Single Column**
+**2. Single Column** — for short summaries, 3-5 key points
 - Standard editorial flow with clear hierarchy
 - Accent bars and pull quotes break up content
-- One column, strong vertical rhythm
+- Strong vertical rhythm, one reading path
 
-**High density — Multi-Column Grid**
+**3. Multi-Column Grid** — for dense editorial content
 - Newspaper-inspired 2-3 column layout
 - Vertical divider lines between columns
-- Content sections organized into a visual grid
 - Sidebar panels for metadata and secondary info
+- Best for 7+ items that benefit from parallel scanning
+
+**4. Modular Panels** — for technical specs, structured data, architecture
+- Card-in-card layout with bordered containers
+- Each topic gets its own panel with subtle border or background
+- Supports code blocks, directory trees, and spec tables inside panels
+- Mix monospace (`font-family: 'SF Mono', 'Fira Code', monospace; font-size: 14px`) with editorial fonts
+- Best for developer-facing content: API docs, architecture overviews, config references
+- Panel CSS pattern:
+  ```css
+  .panel {
+    border: 1.5px solid rgba(0,0,0,0.12);
+    padding: 24px 28px;
+    background: #fff;
+  }
+  .panel-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .panel code, .panel pre {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 14px;
+    background: rgba(0,0,0,0.04);
+    padding: 2px 6px;
+    border-radius: 3px;
+  }
+  ```
+
+**5. Timeline / Steps** — for roadmaps, processes, version history, changelogs
+- Vertical flow with connected nodes or numbered steps
+- Each step gets a number/date, title, and description
+- A vertical line or dots connect the steps visually
+- Alternating left/right placement adds visual interest for 4+ steps
+- Best for sequential information: product roadmaps, onboarding flows, historical events
+- Node CSS pattern:
+  ```css
+  .timeline {
+    position: relative;
+    padding-left: 40px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--accent);
+  }
+  .step {
+    position: relative;
+    margin-bottom: 28px;
+  }
+  .step::before {
+    content: '';
+    position: absolute;
+    left: -34px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid #f5f3ed;
+  }
+  ```
+
+**6. Comparison** — for A vs B, before/after, pros/cons, plan tiers
+- Two (or three) symmetrical columns with clear visual separation
+- Highlight differences with color coding: green for advantage, red/grey for disadvantage
+- A shared header row labels each column
+- Optional "winner" indicator or recommendation badge
+- Best for decision-making content: pricing tiers, tech stack comparisons, before/after results
+- Split CSS pattern:
+  ```css
+  .comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .side {
+    padding: 28px;
+  }
+  .side:first-child {
+    border-right: 3px solid var(--accent);
+  }
+  .side-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  ```
+
+**7. Hero + Details** — for product launches, event announcements, profiles
+- Large color-block header area (full-width accent background or image placeholder)
+- Hero element: oversized date, product name, or person name
+- Details section below with structured metadata
+- Best for announcements, conference talks, product releases, team member profiles
+- Hero CSS pattern:
+  ```css
+  .hero-block {
+    background: var(--accent);
+    color: #fff;
+    padding: 40px;
+    margin: -50px -50px 0 -50px; /* bleed to card edges */
+  }
+  .hero-block .overline {
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 12px;
+  }
+  .hero-block h1 {
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 1.05;
+  }
+  ```
 
 ### Step 3: Build the HTML
 
@@ -172,10 +301,14 @@ Always output:
 
 ## Examples of Good Design Decisions
 
-- Single powerful quote → 72px centered text, generous margins, the typography IS the design
-- Three competing statistics → Side-by-side columns with oversized numbers (120px) and small labels
-- Long article summary → Newspaper-style 2-column layout with a pull quote breaking the grid
-- Event announcement → Full-bleed accent color header, date as hero element, details below
+- Single powerful quote → **Big Typography** — 72px centered text, generous margins
+- Three competing statistics → **Multi-Column Grid** — oversized numbers (120px) with small labels
+- Long article summary → **Multi-Column Grid** — newspaper 2-column with a pull quote
+- API / SDK overview → **Modular Panels** — bordered boxes with code blocks and directory trees
+- Product roadmap → **Timeline** — vertical nodes with dates and milestones
+- Pricing plans → **Comparison** — side-by-side columns with feature checkmarks
+- Conference talk announcement → **Hero + Details** — full-bleed color header with speaker name, details below
+- Before/after redesign → **Comparison** — old vs new screenshots with callout annotations
 
 ## Anti-Patterns to Avoid
 
