@@ -17,14 +17,7 @@
         "./skills/investigating-bugs"
       ]
     },
-    {
-      "name": "reddit-scanner",
-      "description": "Scan Reddit subreddits for pain points, tool complaints, and app opportunities. Find real product ideas from niche communities using the reddit-scanner CLI with Bubble Tea TUI.",
-      "source": "./plugins/reddit-scanner",
-      "strict": false,
-      "skills": ["./skills/scanning-reddit-niches"]
-    },
-    {
+{
       "name": "react-native-mobile",
       "description": "Complete React Native + Expo mobile development: app architecture, UI patterns, state management, design systems, animations, and DevOps (EAS Build, Submit, Update, Workflows)",
       "source": "./plugins/react-native-mobile",
@@ -44,10 +37,13 @@
     },
     {
       "name": "research",
-      "description": "Research and content aggregation: daily tech news digest from ProductHunt, HackerNews, and Reddit for podcasts and newsletters",
+      "description": "Research and content discovery: daily tech news digest from ProductHunt, HackerNews, and Reddit, plus Reddit niche scanning for product opportunities",
       "source": "./plugins/research",
       "strict": false,
-      "skills": ["./skills/daily-tech-digest"]
+      "skills": [
+        "./skills/daily-tech-digest",
+        "./skills/scanning-reddit-niches"
+      ]
     },
     {
       "name": "shipping",

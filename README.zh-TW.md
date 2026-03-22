@@ -31,7 +31,6 @@ claude mcp add-marketplace agent-arsenal https://github.com/allen-hsu/agent-arse
 claude plugins install agent-arsenal:product-planning
 claude plugins install agent-arsenal:engineering-core
 claude plugins install agent-arsenal:shipping
-claude plugins install agent-arsenal:reddit-scanner
 claude plugins install agent-arsenal:react-native-mobile
 claude plugins install agent-arsenal:research
 ```
@@ -46,15 +45,6 @@ claude plugins install agent-arsenal:research
 - `brainstorming-ideas` - YC 風格的 Office Hours，包含強制提問、前提挑戰和設計文件產出
 - `reviewing-product-strategy` - CEO/創辦人視角的計畫審查，4 種範圍模式和 10 項審查
 - `reviewing-product-design` - 設計師視角的計畫審查，7 項審計和 0-10 評分
-
-### reddit-scanner
-
-掃描 Reddit 利基社群，找出痛點和 App 機會。
-
-**技能：**
-- `scanning-reddit-niches` - 從 subreddit 的痛點信號和工具抱怨中發掘產品機會
-
-**需要：** [reddit-scanner CLI](https://github.com/allen-hsu/reddit-scanner)（`go install github.com/allen-hsu/reddit-scanner@latest`）
 
 ### engineering-core
 
@@ -96,10 +86,13 @@ claude plugins install agent-arsenal:research
 
 ### research
 
-研究與內容彙整。
+研究與內容發掘。
 
 **Skills：**
 - `daily-tech-digest` - 彙整 ProductHunt、HackerNews 和 Reddit 的熱門內容
+- `scanning-reddit-niches` - 從 subreddit 的痛點信號和工具抱怨中發掘產品機會
+
+**需要（scanning-reddit-niches）：** [reddit-scanner CLI](https://github.com/allen-hsu/reddit-scanner)（`go install github.com/allen-hsu/reddit-scanner@latest`）
 
 ## 建立新插件
 

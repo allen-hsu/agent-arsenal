@@ -31,7 +31,6 @@ Then install individual plugins:
 claude plugins install agent-arsenal:product-planning
 claude plugins install agent-arsenal:engineering-core
 claude plugins install agent-arsenal:shipping
-claude plugins install agent-arsenal:reddit-scanner
 claude plugins install agent-arsenal:react-native-mobile
 claude plugins install agent-arsenal:research
 ```
@@ -46,15 +45,6 @@ Product strategy and design thinking — brainstorm before you build.
 - `brainstorming-ideas` - YC-style office hours with forcing questions, premise challenges, and design doc output
 - `reviewing-product-strategy` - CEO/founder perspective plan review with 4 scope modes and 10-section mega review
 - `reviewing-product-design` - Designer's eye plan review with 7-pass audit and 0-10 scoring
-
-### reddit-scanner
-
-Scan Reddit for niche pain points and app opportunities.
-
-**Skills:**
-- `scanning-reddit-niches` - Find product opportunities by scanning subreddits for pain signals and tool complaints
-
-**Requires:** [reddit-scanner CLI](https://github.com/allen-hsu/reddit-scanner) (`go install github.com/allen-hsu/reddit-scanner@latest`)
 
 ### engineering-core
 
@@ -96,10 +86,13 @@ Complete React Native + Expo mobile development toolkit.
 
 ### research
 
-Research and content aggregation.
+Research and content discovery.
 
 **Skills:**
 - `daily-tech-digest` - Aggregate trending content from ProductHunt, HackerNews, and Reddit
+- `scanning-reddit-niches` - Find product opportunities by scanning subreddits for pain signals and tool complaints
+
+**Requires (for scanning-reddit-niches):** [reddit-scanner CLI](https://github.com/allen-hsu/reddit-scanner) (`go install github.com/allen-hsu/reddit-scanner@latest`)
 
 ## Creating New Plugins
 
