@@ -216,6 +216,56 @@ When displaying statistics, size the number large (100-120px) and the unit/symbo
 
 Place units inline with numbers — prefix symbols (`$`, `€`) before the number, suffix symbols (`%`, `K`, `M`, `B`) after. Use the accent color on units to further differentiate them from the number.
 
+#### Compound & Transition Stats
+
+For stats that show change (e.g., `200K → 1M`, `+40%`), use `display: flex; align-items: baseline` to keep all elements on the same text baseline. The arrow and plus sign are mid-size connectors, not full-size numbers.
+
+```css
+.stat-row {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.stat-group {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.stat-arrow {
+  font-size: 36px;
+  color: #999;
+  margin: 0 8px;
+}
+.stat-prefix {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--accent);
+}
+```
+
+**Example:** `200K → 1M` →
+```html
+<div class="stat-group">
+  <span class="stat-number">200</span>
+  <span class="stat-unit">K</span>
+  <span class="stat-arrow">→</span>
+  <span class="stat-number">1</span>
+  <span class="stat-unit">M</span>
+</div>
+```
+
+**Example:** `+40%` →
+```html
+<div class="stat-group">
+  <span class="stat-prefix">+</span>
+  <span class="stat-number">40</span>
+  <span class="stat-unit">%</span>
+</div>
+```
+
+The key is `align-items: baseline` — this ensures numbers, units, arrows, and prefixes all sit on the same text baseline regardless of font size, preventing vertical misalignment.
+
 #### Spacing System
 
 - Container padding: 40-50px
